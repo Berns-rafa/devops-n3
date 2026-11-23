@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livraria do Rafael</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/catalogo.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="largura barra">
+      <strong>Livraria do Rafael <small class="versao">v{{VERSAO}}</small></strong>
+      <nav aria-label="Navegação principal"><a href="#catalogo">Catálogo</a><a href="#cadastro">Cadastrar livro</a></nav>
+    </div>
+  </header>
+  <main class="largura">
+    <section id="catalogo" aria-labelledby="titulo">
+      <h1 id="titulo">Catálogo de livros</h1>
+      <p id="estado" role="status">Carregando livros…</p>
+      <div id="livros" class="grade"></div>
+    </section>
+    <section id="cadastro" aria-labelledby="titulo-cadastro">
+      <h2 id="titulo-cadastro">Cadastrar livro</h2>
+      <form>
+        <label>Título <input name="titulo" maxlength="120" required></label>
+        <label>Gênero <input name="genero" maxlength="60" required></label>
+        <label>Autor <input name="autor" maxlength="120" required></label>
+        <label>Preço (R$) <input name="preco" type="number" min="0" max="999999.99" step="0.01" required></label>
+        <button type="submit">Salvar livro</button>
+        <p id="mensagem" role="status"></p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

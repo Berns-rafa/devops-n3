@@ -1,0 +1,21 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: livraria-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: livraria-api
+  template:
+    metadata:
+      labels:
+        app: livraria-api
+    spec:
+      containers:
+        - name: livraria-api
+          image: docker.io/library/livraria-do-rafael:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
